@@ -62,15 +62,15 @@ global ENA;
 global IN3;
 global IN4;
 global ENB;
-IN1 = 'D27';
-IN2 = 'D26';
-ENA = 'D14';
-IN3 = 'D32';
-IN4 = 'D33';
-ENB = 'D25';
-import cv2;
+IN1 = 'D2';
+IN2 = 'D3';
+ENA = 'D4';
+IN3 = 'D5';
+IN4 = 'D6';
+ENB = 'D7';
+import cv2.*;
 Conectar_ESP = false;
-stream_on = true;
+stream_on = false;
 a = arduino
     disp('ESP 32 Conectada');
     configurePin(a, IN1, 'DigitalOutput');
@@ -186,18 +186,22 @@ function Control_Camara_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global stream_on;
-
+disp(stream_on)
 if stream_on == false
   % Start the stream
-  ipcam_url = 'http://192.168.1.100/cam.mjpeg';
+  ipcam_url = 'http://192.168.10.22/240x240.mjpeg';
   ipcam_handle = ipcam(ipcam_url);
   stream_on = true;
-  frame = getframe(ipcam_handle);
-  imshow(frame);
 else
   % Stop the stream
   stream_on = false;
   clear frame;
+  clear ipcam_handle
+end
+while stream_on
+
+  frame = snapshot(ipcam_handle);
+  imshow(frame,'Parent',handles.Ver_Camara)
 end
 
 
@@ -265,7 +269,6 @@ clear a;
 disp('ESP 32 Desconectada')
 delete(hObject);
 clear all;
-clc;
 
 
 % --- Executes on button press in Conectar_ESP.
