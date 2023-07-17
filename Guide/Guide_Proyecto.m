@@ -72,13 +72,13 @@ import cv2.*;
 Conectar_ESP = false;
 stream_on = false;
 a = arduino
-    disp('ESP 32 Conectada');
-    configurePin(a, IN1, 'DigitalOutput');
-    configurePin(a, IN2, 'DigitalOutput');
-    configurePin(a, ENA, 'PWM');
-    configurePin(a, IN3, 'DigitalOutput');
-    configurePin(a, IN4, 'DigitalOutput');
-    configurePin(a, ENB, 'PWM');
+disp('ESP 32 Conectada');
+configurePin(a, IN1, 'DigitalOutput');
+configurePin(a, IN2, 'DigitalOutput');
+configurePin(a, ENA, 'PWM');
+configurePin(a, IN3, 'DigitalOutput');
+configurePin(a, IN4, 'DigitalOutput');
+configurePin(a, ENB, 'PWM');
 
 handles.output = hObject;
 
@@ -201,9 +201,10 @@ end
 while stream_on
 
   frame = snapshot(ipcam_handle);
-  imshow(frame,'Parent',handles.Ver_Camara)
+  imshow(frame,'Parent',handles.Ver_Camara);
+  [msg,~,loc] = readBarcode(frame);
+  disp(msg)
 end
-
 
 
 function movimiento(Sentido1,Sentido2)
