@@ -1710,9 +1710,9 @@
         "z": "274776c7d75078ed",
         "name": "",
         "method": "GET",
-        "ret": "txt",
+        "ret": "obj",
         "paytoqs": "ignore",
-        "url": "https://atlas.microsoft.com/geocode?api-version=2022-09-01-preview&subscription-key=OTCxnVN1XWTNcRHsC85L5CKeTegCSy9NW0D0UiCoMkE&addressLine=Calle 90 No. 76b-29 &countryRegionSet=CO&adminDistrict=DC",
+        "url": "https://atlas.microsoft.com/geocode?api-version=2022-09-01-preview&subscription-key=OTCxnVN1XWTNcRHsC85L5CKeTegCSy9NW0D0UiCoMkE&countryRegionSet=CO&adminDistrict=DC&addressLine=Cra. 19 No 49-20",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -1720,11 +1720,13 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 490,
+        "x": 430,
         "y": 280,
         "wires": [
             [
-                "2162e5d080391004"
+                "4d67e0d57b30d395",
+                "dcb3986dc595dbf8",
+                "5bf94dcc490ff1ce"
             ]
         ]
     },
@@ -1736,10 +1738,6 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
@@ -1749,7 +1747,7 @@
         "topic": "",
         "payload": "true",
         "payloadType": "bool",
-        "x": 230,
+        "x": 150,
         "y": 280,
         "wires": [
             [
@@ -1761,16 +1759,17 @@
         "id": "2162e5d080391004",
         "type": "debug",
         "z": "274776c7d75078ed",
-        "name": "debug 9",
+        "name": "Cor",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
-        "y": 280,
+        "x": 1090,
+        "y": 680,
         "wires": []
     },
     {
@@ -1789,7 +1788,7 @@
         "apikey": "q7HMAPK4Ddkk7xq5NFL87bpXmEJdhVpBUWJEbi3as26M",
         "payload-response": true,
         "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/1ad167e6-8d2d-4b77-bfa2-2c8c595d1289",
-        "x": 480,
+        "x": 640,
         "y": 440,
         "wires": [
             [
@@ -1804,7 +1803,7 @@
         "z": "274776c7d75078ed",
         "name": "",
         "voice": "1",
-        "x": 830,
+        "x": 990,
         "y": 420,
         "wires": []
     },
@@ -1833,7 +1832,7 @@
         "bot": "734909d40f8d2e1e",
         "haserroroutput": false,
         "outputs": 1,
-        "x": 850,
+        "x": 1010,
         "y": 520,
         "wires": [
             []
@@ -1879,11 +1878,404 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
+        "x": 830,
         "y": 480,
         "wires": [
             [
                 "38ea79e13303d278"
+            ]
+        ]
+    },
+    {
+        "id": "4d67e0d57b30d395",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "function 7",
+        "func": "msg.payload = msg.payload.features[0].properties.address.formattedAddress;\n//msg.payload = msg.payload.features[0].geometry.coordinates;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 340,
+        "wires": [
+            [
+                "22bd6de032119b49"
+            ]
+        ]
+    },
+    {
+        "id": "22bd6de032119b49",
+        "type": "debug",
+        "z": "274776c7d75078ed",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "dcb3986dc595dbf8",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "function 8",
+        "func": "msg.payload = msg.payload.features[0].geometry.coordinates;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bf94dcc490ff1ce",
+        "type": "debug",
+        "z": "274776c7d75078ed",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4b56863c78a9e976",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Direccion_A",
+        "func": "msg.d = \"Cra. 19 No 49-20\"\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 660,
+        "wires": [
+            [
+                "df5212076653b78e"
+            ]
+        ]
+    },
+    {
+        "id": "df5212076653b78e",
+        "type": "http request",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://atlas.microsoft.com/geocode?api-version=2022-09-01-preview&subscription-key=OTCxnVN1XWTNcRHsC85L5CKeTegCSy9NW0D0UiCoMkE&countryRegionSet=CO&adminDistrict=DC&addressLine={{{d}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 710,
+        "y": 720,
+        "wires": [
+            [
+                "16efd0b1cf9c950d",
+                "af9a102c54a3e900",
+                "13f45162dcd2c9ea"
+            ]
+        ],
+        "info": "Payload: {{payload}}"
+    },
+    {
+        "id": "16efd0b1cf9c950d",
+        "type": "debug",
+        "z": "274776c7d75078ed",
+        "name": "datos",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "919f85acb03ef533",
+        "type": "inject",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "a",
+        "payloadType": "str",
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "2687dd35ac41459c"
+            ]
+        ]
+    },
+    {
+        "id": "60becac9d3ef2912",
+        "type": "debug",
+        "z": "274776c7d75078ed",
+        "name": "Dir",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "2687dd35ac41459c",
+        "type": "switch",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "a",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "b",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "c",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "d",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 250,
+        "y": 720,
+        "wires": [
+            [
+                "4b56863c78a9e976"
+            ],
+            [
+                "41517202b42f9f25"
+            ],
+            [
+                "8aebf4258166036d"
+            ],
+            [
+                "7dcf8e7ff5dd8b38"
+            ]
+        ]
+    },
+    {
+        "id": "41517202b42f9f25",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Direccion_B",
+        "func": "msg.d = \"Cl. 150 No 18a-12\"\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 700,
+        "wires": [
+            [
+                "df5212076653b78e"
+            ]
+        ]
+    },
+    {
+        "id": "8aebf4258166036d",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Direccion_C",
+        "func": "msg.d = \"Cl. 134 No 46-7\"\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 740,
+        "wires": [
+            [
+                "df5212076653b78e"
+            ]
+        ]
+    },
+    {
+        "id": "7dcf8e7ff5dd8b38",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Direccion_D",
+        "func": "msg.d = \"Cl. 103 No 69b-43\"\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 780,
+        "wires": [
+            [
+                "df5212076653b78e"
+            ]
+        ]
+    },
+    {
+        "id": "59314e59c1e13d15",
+        "type": "inject",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "b",
+        "payloadType": "str",
+        "x": 110,
+        "y": 700,
+        "wires": [
+            [
+                "2687dd35ac41459c"
+            ]
+        ]
+    },
+    {
+        "id": "46ac9c80f66aa6b4",
+        "type": "inject",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "c",
+        "payloadType": "str",
+        "x": 110,
+        "y": 760,
+        "wires": [
+            [
+                "2687dd35ac41459c"
+            ]
+        ]
+    },
+    {
+        "id": "29af1074b8fbfb03",
+        "type": "inject",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "d",
+        "payloadType": "str",
+        "x": 110,
+        "y": 800,
+        "wires": [
+            [
+                "2687dd35ac41459c"
+            ]
+        ]
+    },
+    {
+        "id": "af9a102c54a3e900",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Coordenadas",
+        "func": "msg.payload = msg.payload.features[0].geometry.coordinates;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 680,
+        "wires": [
+            [
+                "2162e5d080391004"
+            ]
+        ]
+    },
+    {
+        "id": "13f45162dcd2c9ea",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Direccion",
+        "func": "msg.payload = msg.payload.features[0].properties.address.formattedAddress;\n//msg.payload = msg.payload.features[0].geometry.coordinates;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 760,
+        "wires": [
+            [
+                "60becac9d3ef2912"
             ]
         ]
     }
