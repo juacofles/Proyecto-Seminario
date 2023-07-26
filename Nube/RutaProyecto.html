@@ -28,7 +28,17 @@
             [-74.04452579,4.731654],
             [-74.030818,4.712691]            
         ]*/
+        function removeRoute(){
+            //Remove any previously calculated route information.
+            if (routeLine) {
+                datasource.remove(routeLine);
+                routeLine = null;
+
+                document.getElementById('output').innerHTML = '';
+            }
+        }
         function getPoints(){
+            removeRoute();
             var start = document.getElementById('startTbx').value;
             var startLat = document.getElementById('startLatitud').value;
             var first = document.getElementById('firstTbx').value;
@@ -39,17 +49,17 @@
             var thirdLatitud = document.getElementById('thirdLatitud').value;
             var fourth = document.getElementById('fourthTbx').value;
             var fourthLatitud = document.getElementById('fourthLatitud').value;
-            let end = document.getElementById('endTbx').value;
-            var endLat = document.getElementById('endLatitud').value;
+            let sixth = document.getElementById('sixthTbx').value;
+            var sixthLat = document.getElementById('sixthLatitud').value;
 
-            if (start!=0 &&  end !=0){
+            if (start!=0 &&  startLat!=0 && first!=0 && firstLatitud!=0){
                 var waypoints = [
                     [start, startLat],
                     [first, firstLatitud],
                     [second, secondLatitud],
                     [third, thirdLatitud],
                     [fourth, fourthLatitud],
-                    [end, endLat] 
+                    [sixth, sixthLat] 
                               
                 ];
                 var points = [];
@@ -133,14 +143,7 @@
         };
 
         function calculateRoute(optimized) {
-            //Remove any previously calculated route information.
-            if (routeLine) {
-                datasource.remove(routeLine);
-                routeLine = null;
-
-                document.getElementById('output').innerHTML = '';
-            }
-
+            removeRoute();
             //Create request to calculate a route in the order in which the waypoints are provided.
             var requestUrl = restRoutingRequestUrl.replace('{query}', waypointQuery);
 
@@ -229,7 +232,7 @@
         <table>
             <tr>
                 <td>Start: </td>
-                <td><input type="text" id="startTbx" value=0 /></td>
+                <td><input type="number" id="startTbx" value=0 /></td>
                 <td><input type="number" id="startLatitud" value=0 /></td>
             </tr>
             <tr>
@@ -253,9 +256,9 @@
                 <td><input type="number" id="fourthLatitud" value=0 /></td>
             </tr>
             <tr>
-                <td>End: </td>
-                <td><input type="number" id="endTbx" value=0 /></td>
-                <td><input type="number" id="endLatitud" value=0 /></td>
+                <td>Sixth: </td>
+                <td><input type="number" id="sixthTbx" value=0 /></td>
+                <td><input type="number" id="sixthLatitud" value=0 /></td>
             </tr>
         </table>
         <input type="button" value="Calculate Route" onclick="calculateRoute()" />
