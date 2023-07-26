@@ -71,8 +71,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1090,
-        "y": 680,
+        "x": 910,
+        "y": 740,
         "wires": []
     },
     {
@@ -91,8 +91,8 @@
         "apikey": "q7HMAPK4Ddkk7xq5NFL87bpXmEJdhVpBUWJEbi3as26M",
         "payload-response": true,
         "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/1ad167e6-8d2d-4b77-bfa2-2c8c595d1289",
-        "x": 640,
-        "y": 440,
+        "x": 680,
+        "y": 380,
         "wires": [
             [
                 "da80d50e70644a01",
@@ -106,8 +106,8 @@
         "z": "274776c7d75078ed",
         "name": "",
         "voice": "1",
-        "x": 990,
-        "y": 420,
+        "x": 870,
+        "y": 360,
         "wires": []
     },
     {
@@ -118,8 +118,8 @@
         "bot": "734909d40f8d2e1e",
         "saveDataDir": "",
         "filterCommands": false,
-        "x": 150,
-        "y": 400,
+        "x": 310,
+        "y": 380,
         "wires": [
             [
                 "8af33a02038574de"
@@ -135,8 +135,8 @@
         "bot": "734909d40f8d2e1e",
         "haserroroutput": false,
         "outputs": 1,
-        "x": 1010,
-        "y": 520,
+        "x": 890,
+        "y": 460,
         "wires": [
             []
         ]
@@ -152,8 +152,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 440,
+        "x": 500,
+        "y": 380,
         "wires": [
             [
                 "efa00dbf926ea4ee"
@@ -181,8 +181,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 480,
+        "x": 850,
+        "y": 420,
         "wires": [
             [
                 "38ea79e13303d278"
@@ -269,8 +269,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 660,
+        "x": 310,
+        "y": 680,
         "wires": [
             [
                 "df5212076653b78e"
@@ -293,8 +293,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 710,
-        "y": 720,
+        "x": 550,
+        "y": 780,
         "wires": [
             [
                 "16efd0b1cf9c950d",
@@ -317,8 +317,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 930,
-        "y": 720,
+        "x": 750,
+        "y": 780,
         "wires": []
     },
     {
@@ -334,8 +334,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1090,
-        "y": 760,
+        "x": 910,
+        "y": 820,
         "wires": []
     },
     {
@@ -365,13 +365,23 @@
                 "t": "eq",
                 "v": "d",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "e",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "f",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 4,
-        "x": 250,
-        "y": 720,
+        "outputs": 6,
+        "x": 110,
+        "y": 760,
         "wires": [
             [
                 "4b56863c78a9e976"
@@ -384,6 +394,12 @@
             ],
             [
                 "7dcf8e7ff5dd8b38"
+            ],
+            [
+                "e5f471dc255b3841"
+            ],
+            [
+                "1797570a75cc156e"
             ]
         ]
     },
@@ -398,8 +414,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 700,
+        "x": 310,
+        "y": 720,
         "wires": [
             [
                 "df5212076653b78e"
@@ -417,8 +433,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 740,
+        "x": 310,
+        "y": 760,
         "wires": [
             [
                 "df5212076653b78e"
@@ -436,8 +452,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 780,
+        "x": 310,
+        "y": 800,
         "wires": [
             [
                 "df5212076653b78e"
@@ -455,11 +471,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 680,
+        "x": 740,
+        "y": 740,
         "wires": [
             [
-                "2162e5d080391004"
+                "2162e5d080391004",
+                "702395ab9277e288"
             ]
         ]
     },
@@ -474,11 +491,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 760,
+        "x": 720,
+        "y": 820,
         "wires": [
             [
-                "60becac9d3ef2912"
+                "60becac9d3ef2912",
+                "07acbf89163019a9"
             ]
         ]
     },
@@ -497,13 +515,164 @@
         "trim": false,
         "base64": false,
         "tls": "",
-        "x": 110,
-        "y": 720,
+        "x": 90,
+        "y": 640,
         "wires": [
             [
                 "2687dd35ac41459c"
             ]
         ]
+    },
+    {
+        "id": "e5f471dc255b3841",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Direccion_E",
+        "func": "msg.d = \"Carrera 53a No 128c-42\"\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 840,
+        "wires": [
+            [
+                "df5212076653b78e"
+            ]
+        ]
+    },
+    {
+        "id": "1797570a75cc156e",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Direccion_F",
+        "func": "msg.d = \"Cra. 69c No 8-25\"\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 880,
+        "wires": [
+            [
+                "df5212076653b78e"
+            ]
+        ]
+    },
+    {
+        "id": "07acbf89163019a9",
+        "type": "watson-text-to-speech",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "lang": "es-ES",
+        "langhidden": "es-ES",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "es-ES_LauraVoice",
+        "voicehidden": "es-ES_LauraVoice",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "q7HMAPK4Ddkk7xq5NFL87bpXmEJdhVpBUWJEbi3as26M",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/1ad167e6-8d2d-4b77-bfa2-2c8c595d1289",
+        "x": 660,
+        "y": 900,
+        "wires": [
+            [
+                "ca598d33b8596516",
+                "797bebd5fda67028"
+            ]
+        ]
+    },
+    {
+        "id": "ca598d33b8596516",
+        "type": "play audio",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "voice": "1",
+        "x": 850,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "a9173095d8798ccd",
+        "type": "telegram sender",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "bot": "734909d40f8d2e1e",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 870,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "797bebd5fda67028",
+        "type": "function",
+        "z": "274776c7d75078ed",
+        "name": "Speech_tel",
+        "func": "msg.payload = {\n    chatId: 5491212780,\n    type : \"voice\",\n    content : msg.payload\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 940,
+        "wires": [
+            [
+                "a9173095d8798ccd"
+            ]
+        ]
+    },
+    {
+        "id": "702395ab9277e288",
+        "type": "join",
+        "z": "274776c7d75078ed",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "120",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 790,
+        "y": 640,
+        "wires": [
+            [
+                "562292598f97a2c2"
+            ]
+        ]
+    },
+    {
+        "id": "562292598f97a2c2",
+        "type": "debug",
+        "z": "274776c7d75078ed",
+        "name": "Cor_join",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 640,
+        "wires": []
     },
     {
         "id": "734909d40f8d2e1e",
