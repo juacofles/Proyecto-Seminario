@@ -15,7 +15,7 @@
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "https://atlas.microsoft.com/geocode?api-version=2022-09-01-preview&subscription-key=OTCxnVN1XWTNcRHsC85L5CKeTegCSy9NW0D0UiCoMkE&countryRegionSet=CO&adminDistrict=DC&addressLine=Cra. 19 No 49-20",
+        "url": "https://atlas.microsoft.com/geocode?api-version=2022-09-01-preview&subscription-key=OTCxnVN1XWTNcRHsC85L5CKeTegCSy9NW0D0UiCoMkE&countryRegionSet=CO&adminDistrict=DC&addressLine=Cl. 51 #No. 19 - 12, Bogota",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -91,8 +91,8 @@
         "apikey": "q7HMAPK4Ddkk7xq5NFL87bpXmEJdhVpBUWJEbi3as26M",
         "payload-response": true,
         "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/1ad167e6-8d2d-4b77-bfa2-2c8c595d1289",
-        "x": 680,
-        "y": 380,
+        "x": 640,
+        "y": 400,
         "wires": [
             [
                 "da80d50e70644a01",
@@ -118,7 +118,7 @@
         "bot": "734909d40f8d2e1e",
         "saveDataDir": "",
         "filterCommands": false,
-        "x": 310,
+        "x": 250,
         "y": 380,
         "wires": [
             [
@@ -152,7 +152,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
+        "x": 460,
         "y": 380,
         "wires": [
             [
@@ -263,7 +263,7 @@
         "type": "function",
         "z": "274776c7d75078ed",
         "name": "Direccion_A",
-        "func": "msg.d = \"Cra. 19 No 49-20\"\nreturn msg;\n\n",
+        "func": "msg.d = \"Av. Caracas No 48-51\"\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -408,7 +408,7 @@
         "type": "function",
         "z": "274776c7d75078ed",
         "name": "Direccion_B",
-        "func": "msg.d = \"Cl. 150 No 18a-12\"\nreturn msg;\n\n",
+        "func": "msg.d = \"Cra. 19 No 49-20\"\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -427,7 +427,7 @@
         "type": "function",
         "z": "274776c7d75078ed",
         "name": "Direccion_C",
-        "func": "msg.d = \"Cl. 134 No 46-7\"\nreturn msg;\n\n",
+        "func": "msg.d = \"Calle 52 No. 13-70\"\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -446,7 +446,7 @@
         "type": "function",
         "z": "274776c7d75078ed",
         "name": "Direccion_D",
-        "func": "msg.d = \"Cl. 103 No 69b-43\"\nreturn msg;\n\n",
+        "func": "msg.d = \"Cl. 51 No. 19 - 12, Bogota\"\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -516,7 +516,7 @@
         "base64": false,
         "tls": "",
         "x": 90,
-        "y": 840,
+        "y": 860,
         "wires": [
             [
                 "2687dd35ac41459c"
@@ -528,7 +528,7 @@
         "type": "function",
         "z": "274776c7d75078ed",
         "name": "Direccion_E",
-        "func": "msg.d = \"Carrera 53a No 128c-42\"\nreturn msg;\n\n",
+        "func": "msg.d = \"Cr 19 No. 50 - 30, Bogota\"\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -547,7 +547,7 @@
         "type": "function",
         "z": "274776c7d75078ed",
         "name": "Direccion_F",
-        "func": "msg.d = \"Cra. 69c No 8-25\"\nreturn msg;\n\n",
+        "func": "msg.d = \"Cr 19 No. 48 - 37, Bogota\"\nreturn msg;\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -605,7 +605,7 @@
         "haserroroutput": false,
         "outputs": 1,
         "x": 870,
-        "y": 1180,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -642,7 +642,7 @@
         "joiner": "\\n",
         "joinerType": "str",
         "accumulate": false,
-        "timeout": "50",
+        "timeout": "240",
         "count": "",
         "reduceRight": false,
         "reduceExp": "",
@@ -688,7 +688,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "Mapa",
-        "x": 330,
+        "x": 390,
         "y": 760,
         "wires": [
             [],
