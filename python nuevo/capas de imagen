@@ -1,0 +1,27 @@
+import cv2 #Cargando la libreria de OpenCV
+
+#1. CARGAR LA IMAGEN
+img = cv2.imread('C:/users/juanc/Downloads/opencv/Ejemplo01.jpg')
+
+#2. VISUALIZACIÓN DE LA IMAGEN
+cv2.imshow('Cuadro',img)
+
+#4. ¿COMO EXTRAER LOS COLORES DE UNA IMAGEN?
+img_b, img_g, img_r = cv2.split(img)
+cv2.imshow('Capa azul',img_b)
+cv2.imshow('Capa verde',img_g)
+cv2.imshow('Capa roja',img_r)
+
+# #5. EXTRAER LA INFORMACIÓN IMPORTANTE DE LA IMAGEN
+Alto, Ancho, Canales = img.shape
+tam = img.size
+tipo = img.dtype
+print("tamaño" + str(tam) + "bytes")
+print("Ancho" + str(Ancho) + "pixeles")
+print("Alto" + str(Alto) + "pixeles")
+print("#Canales" + str(Canales))
+print("Tipo de canales" + str(tipo))
+
+# #3. CREAR METODO PARA EVITAR EL CIERRER AUTOATICO DE LA VENTANA 
+cv2.waitKey(0)
+cv2.destroyAllwindows()
